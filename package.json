@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "jira-upload1": "curl -H \"Content-Type: text/xml\" -X POST -H \"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnQiOiJhZTQ1NGJmMC04MzQ0LTM2YjctOGNiMy1mMTE0NTNkNGMzNWQiLCJhY2NvdW50SWQiOiI3MTIwMjA6NDQ3YTI4YmUtMDJhOC00NjFmLTk2OWMtMzkxZjIwYjk4OGIyIiwiaXNYZWEiOmZhbHNlLCJpYXQiOjE3MzMwNjc2MzksImV4cCI6MTczMzE1NDAzOSwiYXVkIjoiODI5QUU3Mzc3RjQ2NDJDNDkzOEM3N0U4MEFEMTAyRDgiLCJpc3MiOiJjb20ueHBhbmRpdC5wbHVnaW5zLnhyYXkiLCJzdWIiOiI4MjlBRTczNzdGNDY0MkM0OTM4Qzc3RTgwQUQxMDJEOCJ9.E3V6tOsoztVN3wA0XB8uoMQx5LuybmlXKn1MbrHTiHI\"  --data @\"/Users/Work/Documents/VSCode/Study/Module_12/report/Post and edit tasks.xml\" \"https://xray.cloud.getxray.app/api/v2/import/execution/junit?projectKey=RFJ\"",
+    "jira-upload2": "node -e \"const fs = require('fs'); const data = JSON.parse(fs.readFileSync('key.json', 'utf8')); const token = data[1].token; const { execSync } = require('child_process'); execSync(`curl -H 'Content-Type: text/xml' -X POST -H 'Authorization: Bearer ${token}' --data @'/Users/Work/Documents/VSCode/Study/Module_12/report/Post and edit tasks.xml' 'https://xray.cloud.getxray.app/api/v2/import/execution/junit?projectKey=RFJ'`);\""
   },
   "keywords": [],
   "author": "",
