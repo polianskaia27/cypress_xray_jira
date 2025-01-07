@@ -1,3 +1,3 @@
 key.json
 node_modules
-jira_credentials.json
+jira_credentials.env.json
